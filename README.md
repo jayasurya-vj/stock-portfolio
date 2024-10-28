@@ -2,7 +2,7 @@
 
 Portfolio of stocks including 
 
-* daily/yearly market change candle charts (using Highcharts)
+* today/yearly market change candle charts (using Highcharts)
 * persistence mechanism (using localStorage)
 * Maintains a single position
 * Option to buy/sell a number of shares 
