@@ -1,0 +1,25 @@
+
+
+
+<table class="stocks-table">
+    <thead>
+        <tr>
+          
+            @for (header of transactionsTableHeaders; track $index) {
+                  <th>{{header}}</th> 
+                 }
+        
+        </tr>
+    </thead>
+    <tbody>
+        @for (data of transactionsDataList(); track $index) {
+            <tr>
+                <td>{{data.type}}</td> 
+                <td>{{data.noContracts}}</td> 
+                <td>{{data.pricePerContract| currency: 'EUR' }}</td> 
+                <td>{{data.totalValue| currency: 'EUR'}}</td> 
+            </tr>
+        }
+    </tbody>
+</table>
+

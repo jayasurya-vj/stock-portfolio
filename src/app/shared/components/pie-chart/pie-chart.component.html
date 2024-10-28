@@ -1,0 +1,26 @@
+
+
+@if(this.portfolioList().length){
+<section class="piechart-container">
+<highcharts-chart 
+  [Highcharts]="Highcharts"
+  [options]="chartOptionsCurrentValue"
+
+  style=" height: 300px; display: block;"
+></highcharts-chart>
+
+<highcharts-chart 
+  [Highcharts]="Highcharts"
+  [options]="chartOptionsBuyingValue"
+
+  style=" height: 300px; display: block;"
+></highcharts-chart>
+
+<highcharts-chart 
+  [Highcharts]="Highcharts"
+  [options]="chartOptionsYield"
+
+  style=" height: 300px; display: block;"
+></highcharts-chart>
+</section>
+}

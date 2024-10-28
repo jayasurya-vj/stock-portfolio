@@ -1,0 +1,25 @@
+.summary-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+.summary-element {
+  background-color: #f1f1f1;
+  min-width: 18vw;
+  margin: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid var(--primary-color);
+  font-size: 18px;
+}
+
+.summary-heading{
+ padding:0 5px ;
+ margin-bottom:0 ;
+ color:  var(--primary-color);
+}
+
+.summary-text{
+  padding:0px 5px;
+}

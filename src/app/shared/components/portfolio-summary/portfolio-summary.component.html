@@ -1,0 +1,23 @@
+
+@if(this.portfolioSummary() != null){
+    <div class="summary-container">
+        <div class="summary-element">
+            <h4 class="summary-heading">{{"Current Value"}}</h4>
+            <p class="summary-text">{{this.portfolioSummary()?.totalCurrentValue | currency: 'EUR'}}</p>
+        </div>
+        <div class="summary-element">
+            <h4 class="summary-heading">{{"Total Invested"}}</h4>
+            <p class="summary-text">{{this.portfolioSummary()?.totalBuyingValue | currency: 'EUR'}}</p>
+        </div>        
+        <div class="summary-element">
+            <h4 class="summary-heading">{{"Total Yield"}}</h4>
+            <p class="summary-text">{{this.portfolioSummary()?.yield | currency: 'EUR'}}</p>
+        </div>
+        <div class="summary-element">
+            <h4 class="summary-heading">{{"Percentage Yield"}}</h4>
+            <p class="summary-text">{{this.portfolioSummary()?.yieldPercentage | percent: ".2"}}</p>
+        </div>
+       
+      </div>
+}
+

@@ -1,0 +1,14 @@
+
+
+
+@if (modalService.showModal()) {
+    <div  class="modal">
+        <div class="modal-content">
+        <button class="close" (click)="onCloseModalPopUp()">&times;</button>
+        <div class="component-container">
+          <ng-container *ngComponentOutlet="modalService.modalComponent().component; inputs: modalService.modalComponent().inputs"></ng-container>
+        </div>         
+        </div>
+    
+    </div>
+}

@@ -1,0 +1,46 @@
+
+<table class="stocks-table">
+    <thead>
+        <tr>
+          
+            @for (header of portfolioTableHeaders; track $index) {
+                
+                <th>{{header}}</th> 
+                
+            }
+
+            @for (value of portfolioTableOptions; track $index) {
+                <th>{{value}}</th> 
+            }  
+        
+        </tr>
+    </thead>
+    <tbody>
+        @for (data of portfolioList(); track $index) {
+            <tr>
+                   <td>{{data.symbol}}</td> 
+                   <td>{{data.name}}</td> 
+                   <td>{{data.currentPrice | currency: 'EUR' }} {{data?.currentPriceInUSD && "(" + (data?.currentPriceInUSD| currency: 'USD') + ")"}}</td> 
+                   <td>{{data.noContracts}}</td> 
+                   <td>{{data.totalBuyingValue | currency: 'EUR'}}</td> 
+                   <td>{{data.currentValue | currency: 'EUR'}} </td> 
+                   <td>{{data.yield | currency: 'EUR'}}</td> 
+                   <td>{{data.yieldPercentage | percent: ".2" }}</td> 
+                
+                @for (value of portfolioTableOptions; track $index) {
+                        <td>
+                            <custom-button
+                            buttonType="secondary"
+                            [buttonTxt]="value"
+                            (click)="onOptionClick(value,data)"></custom-button>
+                        </td> 
+                }          
+               
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if( !portfolioList().length){
+    <p>Portfolio is empty. Start Investing!</p>
+}

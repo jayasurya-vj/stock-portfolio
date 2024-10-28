@@ -1,0 +1,11 @@
+@if(this.type()=="day" && !this.marketChangeSimulatorService.isTimeGreaterThanMartketStartTime()){
+  <strong class="msg">Share Market is not open. Showing historical value!</strong>
+}
+
+<highcharts-chart 
+  [Highcharts]="Highcharts"
+  [options]="chartOptions"
+  constructorType="stockChart" 
+
+  style="width: 70vw; height: 700px; display: block;"
+></highcharts-chart>

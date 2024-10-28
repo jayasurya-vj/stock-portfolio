@@ -1,0 +1,40 @@
+
+
+@if(isFormInitialized()){
+  <div class="container">
+    @if(this.errMsg()){
+      <p class="errorMsg">{{this.errMsg()}}</p>
+    }
+    <form [formGroup]="stockForm" (ngSubmit)="onSubmit()">
+    <div class="formControl">
+      <div class="col">
+        <label for="symbol"> Symbol</label>
+      </div>
+      <div class="col">
+        <input type="text" id="symbol" name="symbol" placeholder="Stock Symbol" formControlName="symbol">
+      </div>
+    </div>
+    <div class="formControl">
+      <div class="col">
+        <label for="contracts">No. of Contracts (max allowed:{{maxContracts()}})</label>
+      </div>
+      <div class="col">
+        <input type="number" id="contracts" name="contracts" placeholder="No. of Contracts" formControlName="contracts" min="1" [max]="maxContracts()">
+      </div>
+    </div>  
+    <div class="formControl">
+      <div class="col">
+        <label for="price">{{type()}} Price &#8364;</label>
+      </div>
+      <div class="col">
+        <input type="number" step="any" id="price" name="price" placeholder="price" formControlName="price" min="0.1" >
+      </div>
+    </div>    
+    <br>
+    <div>
+      <button type="submit" value="Submit">{{type()}}</button>
+    </div>
+    </form>
+</div>
+}
+

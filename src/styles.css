@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --primary-color: #009879;
+    --hover-color: #3a7066;
+    color: #535b62;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+    font-size: 14px !important;
+}
+
+.errorMsg{
+    color: red;
+}
